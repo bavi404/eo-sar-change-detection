@@ -1,10 +1,9 @@
-# Official final config — matches best reported results (20 epochs, lr 2e-5, crop 512).
-# Paths are relative to this file's directory unless absolute.
-# If your data is flat (train/pre-event/...), set train_root to "./data/train" (same for val/test).
+# Update dataset paths to match local or Kaggle dataset mounts.
+
 data:
-  train_root: "./data/train/train"
-  val_root: "./data/val/val"
-  test_root: "./data/test/test"
+  train_root: "/kaggle/input/your-train-dataset/train/train"
+  val_root: "/kaggle/input/your-val-dataset/val/val"
+  test_root: "/kaggle/input/your-test-dataset/test/test"
 
 dataset:
   concat_diff: true
@@ -27,13 +26,11 @@ training:
   lr: 2.0e-05
   num_workers: 0
   crop_size: 512
-  # Fixed decision threshold (frozen after validation calibration). Used for val IoU during training and for eval when tuning is off.
   threshold: 0.20
   output_dir: "./models/checkpoints"
   seed: 42
 
 evaluation:
-  # Threshold already chosen (0.20); keep false for reproducible eval identical to reported metrics.
   tune_threshold_on_val: false
-  # TTA is implemented in eval.py (H/V flip average of sigmoid probs). Must stay true to match reported numbers.
   use_tta: true
+  sample_results_dir: "./sample_results"

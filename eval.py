@@ -352,7 +352,8 @@ def main() -> None:
     print_metrics("Validation", val_metrics)
     print_metrics("Test", test_metrics)
 
-    vis_dir = out_dir / "visualizations"
+    vis_dir = resolve_path_value(eval_cfg.get("sample_results_dir", "./sample_results"), config_dir)
+    vis_dir.mkdir(parents=True, exist_ok=True)
     save_prediction_examples(
         model=model,
         dataset=test_dataset_for_vis,

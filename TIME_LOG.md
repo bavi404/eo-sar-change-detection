@@ -18,12 +18,7 @@
 ## Compute Resources
 
 - **Platform:** Kaggle (notebooks / GPU sessions)
-- **GPU:** NVIDIA T4 / P100 (as allocated per session)
+- **GPU:** NVIDIA T4 (as allocated per session)
 - **Training framework:** PyTorch
 - **Key libraries:** `segmentation_models_pytorch`, `albumentations`, `tifffile`
 
----
-
-## Notes (optional edits)
-
-Adjust hours and GPU type to match your actual sessions. If the course asks for dates, add a column `Date` to the table or a short bullet list per week.
