@@ -1,0 +1,39 @@
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+galaxeye/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Data (keep local; do not commit raw dataset files)
+data/**
+!data/.gitkeep
+
+# Checkpoints and large artifacts (share via external link)
+models/checkpoints/**
+!models/checkpoints/.gitkeep
+*.pt
+*.pth
+*.ckpt
+
+# Local run artifacts
+models/checkpoints/visualizations/
+data/*.png
+*.tmp
+
+# OS / packaging
+Thumbs.db
+*.zip
+*.log
